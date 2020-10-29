@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FakeHttpClientService } from '../mocks/fake-http-client.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  courses = [];
 
-  ngOnInit(): void {}
+  constructor(private fakeHttpClient: FakeHttpClientService) {}
+
+  async ngOnInit(): Promise<void> {
+    this.courses = await this.fakeHttpClient.getCourses();
+  }
 }

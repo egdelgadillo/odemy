@@ -5,11 +5,7 @@
 >
   <div class="navbar-brand">
     <a class="navbar-item" routerLink="/">
-      <img
-        src="https://bulma.io/images/bulma-logo.png"
-        width="112"
-        height="28"
-      />
+      <img src="assets/logo.jpg" width="112" height="28" />
     </a>
 
     <a
@@ -69,19 +65,18 @@
 
 <router-outlet></router-outlet>
 
-<br />
 <section class="footer hero is-primary">
   <div class="hero-body">
     <div class="container">
       <div class="columns">
         <div class="column">
-          <a href="">Home</a>
-          <a href="">Courses</a>
-          <a href="">Categories</a>
+          <a routerLink="/">Home</a>
+          <a routerLink="/courses">Courses</a>
+          <a routerLink="">Categories</a>
         </div>
         <div class="column">
-          <a href="">About Us</a>
-          <a href="">Contact Us</a>
+          <a routerLink="">About Us</a>
+          <a routerLink="">Contact Us</a>
         </div>
         <div class="column is-narrow">
           <div class="field">

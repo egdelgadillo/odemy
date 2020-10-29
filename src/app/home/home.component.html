@@ -38,32 +38,27 @@
     </p>
     <hr class="hr" />
     <div class="columns is-multiline">
-      <div class="column is-3">
-        <app-course-card></app-course-card>
+      <div class="column is-3" *ngFor="let course of courses; let i = index">
+        <app-course-card
+          [imgUrl]="course.imgUrl"
+          [title]="course.title"
+          [instructor]="course.instructor"
+          [score]="course.score"
+          [price]="course.price"
+          [isDiscount]="course.isDiscount"
+          *ngIf="i < 8"
+        ></app-course-card>
       </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
-      </div>
-      <div class="column is-3">
-        <app-course-card></app-course-card>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <a
+          class="button is-fullwidth is-success is-medium"
+          routerLink="/courses"
+        >
+          Get more courses!
+        </a>
       </div>
     </div>
   </div>
