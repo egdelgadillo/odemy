@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "odemy"
+    }
+  },
+  "defaultProject": "odemy",
+  "cli": {
+    "analytics": "c43f16e1-56a5-4ad1-a541-e05a25976ce8"
+  }
 }
