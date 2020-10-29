@@ -1,0 +1,29 @@
+<div class="columns">
+  <div class="column is-3">
+    <figure class="image is-4by3">
+      <img [src]="imgUrl" />
+    </figure>
+  </div>
+  <div class="column">
+    <h2 class="title is-6">{{ title }}</h2>
+    <h2 class="subtitle is-6">{{ description }}</h2>
+    <p class="subtitle is-7 has-text-grey">{{ instructor }}</p>
+    <div class="rating has-text-weight-semibold is-6">
+      <span class="score">{{ score | number: "1.1-2" }}</span>
+      <span class="stars" *appRepeat="getFullStars(score)">
+        <i class="fas fa-star"></i>
+      </span>
+      <span class="stars" *appRepeat="5 - score">
+        <i class="far fa-star"></i>
+      </span>
+    </div>
+    <p class="title is-4 has-text-success price" *ngIf="price === 0">Free</p>
+    <div class="title is-4 price has-text-success" *ngIf="price !== 0">
+      {{ price | currency }}
+      <span class="subtitle is-6 discount" *ngIf="isDiscount">
+        &nbsp;{{ addPercentage(price, 25) | currency }}&nbsp;</span
+      >
+    </div>
+  </div>
+</div>
+<hr class="hr" />

@@ -5,7 +5,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1505685296765-3a2736de412f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
       title: 'Learn HTML with 12 small projects',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Stephen Smith',
       categories: ['HTML', 'Web Development'],
       level: 'Beginner',
@@ -20,7 +20,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=431&q=80',
       title: 'Meditation Tutorial with Daily exercises',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Tara Truman',
       categories: ['Meditation', 'Well Being'],
       level: 'Beginner',
@@ -35,7 +35,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1559749619-5f290507d5e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80',
       title: 'How to make a good Mate + Extra tips',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Marcos Monaguillo',
       categories: ['Lifestyle'],
       level: 'Beginner',
@@ -50,7 +50,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
       title: 'CompTIA Network+ Certification Course',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Luke Loobster',
       categories: ['Networking', 'IT'],
       level: 'Beginner',
@@ -65,7 +65,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1485796826113-174aa68fd81b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
       title: 'Machine Learning A-Z. From Cero to Hero - Tensor Flow',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Ramona Ramirez',
       categories: ['Networking', 'IT'],
       level: 'Beginner',
@@ -80,7 +80,7 @@ export class FakeDbService {
       imgUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/110px-Python-logo-notext.svg.png',
       title: 'Advanced Python 3 Course . All you need to know',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Mark Mandela',
       categories: ['IT', 'Development'],
       level: 'Advanced',
@@ -95,7 +95,7 @@ export class FakeDbService {
       imgUrl:
         'https://www.softzone.es/app/uploads-softzone.es/2019/09/Word-Gratis-800x419.jpg',
       title: 'In depth Office Word Course. Master the office.',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Rajesh Rakamahana',
       categories: ['IT', 'Office'],
       level: 'Intermediate',
@@ -111,7 +111,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1587767119394-bebe40a89504?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1484&q=80',
       title: 'How to potty train your dog. All you need to know',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Cesar Centurion',
       categories: ['IT'],
       level: 'Intermediate',
@@ -126,7 +126,7 @@ export class FakeDbService {
       imgUrl:
         'https://images.unsplash.com/photo-1509803874385-db7c23652552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
       title: 'Cloud Computing with Amazon AWS. All you will ever need',
-      description: '',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
       instructor: 'Carl Common',
       categories: ['IT'],
       level: 'Intermediate',

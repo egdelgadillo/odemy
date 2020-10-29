@@ -9,7 +9,7 @@ import { FakeHttpClientService } from '../../mocks/fake-http-client.service';
 export class CourseCardComponent implements OnInit {
   @Input() imgUrl = '';
   @Input() title = '';
-  @Input() instructor = { name: '' };
+  @Input() instructor = '';
   @Input() score = 0;
   @Input() price = 0;
   @Input() isDiscount = false;

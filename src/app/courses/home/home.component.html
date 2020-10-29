@@ -1,1 +1,20 @@
-<p>home works!</p>
+<section class="section">
+  <div class="container">
+    <h2 class="title">{{ courses.length }} available courses</h2>
+    <hr class="hr" />
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <app-course-list-item
+          *ngFor="let course of courses"
+          [imgUrl]="course.imgUrl"
+          [title]="course.title"
+          [description]="course.description"
+          [instructor]="course.instructor"
+          [score]="course.score"
+          [price]="course.price"
+          [isDiscount]="course.isDiscount"
+        ></app-course-list-item>
+      </div>
+    </div>
+  </div>
+</section>
