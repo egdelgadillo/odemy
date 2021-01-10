@@ -1,6 +1,6 @@
 # Odemy
 
-Odemy is an open source udemy-like platform for course learning. This was done as a personal project to improve several development skills.
+Odemy is an open source udemy-like platform for course learning built with Angular 10. This was done as a personal project to improve several development skills.
 
 ## Contents
 
