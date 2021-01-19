@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FakeHttpClientService } from '../../mocks/fake-http-client.service';
 
 @Component({
   selector: 'app-course-card',
   templateUrl: './course-card.component.html',
-  styleUrls: ['./course-card.component.sass'],
+  styleUrls: ['./course-card.component.scss'],
 })
 export class CourseCardComponent implements OnInit {
   @Input() imgUrl = '';
@@ -13,8 +12,6 @@ export class CourseCardComponent implements OnInit {
   @Input() score = 0;
   @Input() price = 0;
   @Input() isDiscount = false;
-
-  constructor(private fakeHttpClient: FakeHttpClientService) {}
 
   ngOnInit(): void {}
 

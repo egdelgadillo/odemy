@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CourseCardComponent } from './course-card/course-card.component';
-import { RepeatDirective } from '../directives/repeat.directive';
-import { CourseListItemComponent } from './course-list-item/course-list-item.component';
+import { HttpClientModule } from '@angular/common/http';
+
+// Components
+import { CourseCardComponent } from './components/course-card/course-card.component';
+import { CourseListItemComponent } from './components/course-list-item/course-list-item.component';
+
+// Directives
+import { RepeatDirective } from './directives/repeat.directive';
 
 @NgModule({
   declarations: [CourseCardComponent, RepeatDirective, CourseListItemComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   exports: [CourseCardComponent, CourseListItemComponent],
 })
 export class SharedModule {}
