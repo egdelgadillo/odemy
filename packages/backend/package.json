@@ -1,11 +1,8 @@
 {
-  "name": "@odemy/odemy",
+  "name": "@odemy/backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "workspaces": [
-    "./packages/*"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,9 +11,5 @@
     "url": "git+https://github.com/egdelgadillo/odemy.git"
   },
   "author": "Emiliano Delgadillo <emilianog.delgadillo@gmail.com> (https://github.com/egdelgadillo)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/egdelgadillo/odemy/issues"
-  },
-  "homepage": "https://github.com/egdelgadillo/odemy#readme"
+  "license": "ISC"
 }
