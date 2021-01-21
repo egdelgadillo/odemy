@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:db:start": "json-server --watch ./mock/db/db.json",
-    "start:dev": "concurrently \"npm run dev:db:start\" \"ng serve\""
+    "dev:db:start": "json-server --host 0.0.0.0 --watch ./mock/db/bundle.json",
+    "dev:db:bundle": "ts-node jsonBundler.ts",
+    "start:dev": "concurrently \"npm run dev:db:start\" \"ng serve --host 0.0.0.0\""
   },
   "private": true,
   "dependencies": {

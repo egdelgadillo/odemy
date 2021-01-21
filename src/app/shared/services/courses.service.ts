@@ -1,6 +1,6 @@
 import { ApiService } from './api.service';
 import { Injectable } from '@angular/core';
-import { ICourses } from '../models/ICourses';
+import { ICourses } from '../../models/ICourses';
 
 @Injectable({
   providedIn: 'root',

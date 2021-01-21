@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICourses } from '../models/ICourses';
 import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CoursesService } from '../shared/services/courses.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  courses = [];
+  courses: ICourses[];
 
   constructor(private coursesService: CoursesService) {
     console.log('aqui');
