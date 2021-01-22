@@ -11,5 +11,9 @@
     "url": "git+https://github.com/egdelgadillo/odemy.git"
   },
   "author": "Emiliano Delgadillo <emilianog.delgadillo@gmail.com> (https://github.com/egdelgadillo)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@egdelgadillo/ts-object-parser": "^1.0.7",
+    "sequelize-typescript": "^2.0.0"
+  }
 }

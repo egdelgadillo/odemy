@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ICourses } from '@odemy/shared';
-import { CoursesService } from '../shared/services/courses.service';
+import { Component, OnInit } from '@angular/core'
+import { ICourses } from '@odemy/shared'
+import { CoursesService } from '../shared/services/courses.service'
 
 @Component({
   selector: 'app-home',
@@ -8,13 +8,11 @@ import { CoursesService } from '../shared/services/courses.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  courses: ICourses[];
+  courses: ICourses[]
 
-  constructor(private coursesService: CoursesService) {
-    console.log('aqui');
-  }
+  constructor(private coursesService: CoursesService) {}
 
   async ngOnInit(): Promise<void> {
-    this.courses = await this.coursesService.getAll();
+    this.courses = await this.coursesService.getAll()
   }
 }

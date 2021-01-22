@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  odemy_db:
+    image: postgres:13.1
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: 'odemy_local'
+      POSTGRES_USER: 'local_user'
+      POSTGRES_PASSWORD: '4CJn296zH7'
