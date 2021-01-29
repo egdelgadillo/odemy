@@ -27,6 +27,6 @@ export class UsersModel extends Model implements IUser {
   @Column
   email!: string;
 
-  @Column
-  user_type!: UserType;
+  @Column(DataType.STRING)
+  user_type!: typeof UserType[number];
 }

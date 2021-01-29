@@ -1,6 +1,8 @@
 import { IUser } from '@odemy/shared';
 import { UsersModel } from '../models/UsersModel';
 import { ModelsController } from './ModelsController';
+import { ValidateObject } from '../../../../../object-validator';
+import { UserModelValidator } from '@odemy/shared';
 
 export class UserController extends ModelsController<IUser> {
   static instance: UserController;
@@ -11,7 +13,10 @@ export class UserController extends ModelsController<IUser> {
   }
 
   async create(user: IUser) {
-    const result = await UsersModel.create(user);
+    const userObject = ValidateObject(user, UserModelValidator, {
+      throwOnError: true,
+    });
+    const result = await UsersModel.create(userObject);
     return result;
   }
 

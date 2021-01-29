@@ -1,9 +1,9 @@
-import { UserType } from './UserType';
+import { UserType } from '../types/UserType';
 
 export interface IUser {
-  id: string;
+  id?: string;
   name: string;
   last_name: string;
   email: string;
-  user_type: UserType;
+  user_type: typeof UserType[number];
 }

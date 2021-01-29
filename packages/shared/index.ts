@@ -1,4 +1,5 @@
 export * from './entities';
 export * from './utils';
 export * from './types';
-export * from '@egdelgadillo/ts-object-parser';
+export * from '../../../object-validator';
+export * from './validators';
