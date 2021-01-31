@@ -3,6 +3,7 @@ import { UsersModel } from '../models/UsersModel';
 import { ModelsController } from './ModelsController';
 import { ValidateObject } from '../../../../../object-validator';
 import { UserModelValidator } from '@odemy/shared';
+import { ErrorController } from './ErrorController';
 
 export class UserController extends ModelsController<IUser> {
   static instance: UserController;
@@ -13,44 +14,40 @@ export class UserController extends ModelsController<IUser> {
   }
 
   async create(user: IUser) {
-    const userObject = ValidateObject(user, UserModelValidator, {
-      throwOnError: true,
-    });
-    const result = await UsersModel.create(userObject);
+    const newUser = ValidateObject(user, UserModelValidator);
+    if (!newUser) {
+      throw ErrorController.BadRequest();
+    }
+    const result = await UsersModel.create(newUser);
     return result;
   }
 
   async getAll() {
-    const result = await UsersModel.findAndCountAll();
+    const users = await UsersModel.findAndCountAll();
 
     return {
-      data: result.rows,
+      data: users.rows,
       limit: 20,
       page: 1,
-      total: result.count,
+      total: users.count,
     };
   }
 
   async get(id: string) {
-    const result = await UsersModel.findByPk(id);
-
-    if (!result) {
-      throw new Error('User not found');
+    const foundUser = await UsersModel.findByPk(id);
+    if (!foundUser) {
+      throw ErrorController.NotFound();
     }
-
-    return result;
+    return foundUser;
   }
 
   async delete(id: string) {
-    const result = await UsersModel.findByPk(id);
-
-    if (!result) {
-      throw new Error('User not found');
+    const foundUser = await UsersModel.findByPk(id);
+    if (!foundUser) {
+      throw ErrorController.NotFound();
     }
-
-    await result.destroy();
-
-    return result;
+    await foundUser.destroy();
+    return foundUser;
   }
 
   static getInstance() {

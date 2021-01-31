@@ -1,5 +1,5 @@
 import { ConvertToModel } from '@odemy/shared';
-import { ISuccessGetAllResponse } from '@odemy/shared';
+import { IGetAllModels } from '@odemy/shared';
 import { DatabaseController } from './DatabaseController';
 
 export abstract class ModelsController<T> {
@@ -7,7 +7,7 @@ export abstract class ModelsController<T> {
     DatabaseController.getInstance();
   }
   abstract get(id: string): Promise<T | ConvertToModel<T>>;
-  abstract getAll(): Promise<ISuccessGetAllResponse<T | ConvertToModel<T>>>;
+  abstract getAll(): Promise<IGetAllModels<T | ConvertToModel<T>>>;
   abstract create(data: T): Promise<T | ConvertToModel<T>>;
   abstract delete(id: string): Promise<T | ConvertToModel<T>>;
 }
