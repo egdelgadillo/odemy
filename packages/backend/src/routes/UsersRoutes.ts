@@ -1,15 +1,15 @@
 import { Router, Request, NextFunction, Response } from 'express';
 import { ApiResponse, IUser } from '@odemy/shared';
 
-import { UserController } from '../controllers/entities/UserController';
+import { UsersController } from '../controllers/entities/UsersController';
 import { ErrorController } from '../controllers/ErrorController';
 
-export const UserRoutes = Router();
+export const UsersRoutes = Router();
 
 /**
  * Create User
  */
-UserRoutes.post(
+UsersRoutes.post(
   '',
   async (
     req: Request,
@@ -18,7 +18,7 @@ UserRoutes.post(
   ) => {
     try {
       const body = req.body;
-      const userController = UserController.getInstance();
+      const userController = UsersController.getInstance();
       const result = await userController.create(body);
 
       res.status(200).send({ status: 'OK', data: result });
@@ -31,7 +31,7 @@ UserRoutes.post(
 /**
  * Get all Users
  */
-UserRoutes.get(
+UsersRoutes.get(
   '',
   async (
     req: Request,
@@ -39,7 +39,7 @@ UserRoutes.get(
     next: NextFunction
   ) => {
     try {
-      const userController = UserController.getInstance();
+      const userController = UsersController.getInstance();
 
       const result = await userController.getAll();
 

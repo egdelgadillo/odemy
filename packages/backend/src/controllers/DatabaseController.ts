@@ -44,9 +44,10 @@ export class DatabaseController {
         password: process.env.POSTGRES_PASSWORD,
         dialect: 'postgres',
         models: [__dirname + '/../models'],
+        sync: { force: true },
       });
     } catch (err) {
-      throw ErrorController.DatabaseError();
+      throw ErrorController.DatabaseError(err);
     }
   }
 
@@ -60,7 +61,7 @@ export class DatabaseController {
       }
       return DatabaseController.instance;
     } catch (err) {
-      throw ErrorController.DatabaseError();
+      throw ErrorController.DatabaseError(err);
     }
   };
 }

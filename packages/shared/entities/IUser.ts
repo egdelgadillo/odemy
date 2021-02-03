@@ -7,3 +7,9 @@ export interface IUser {
   email: string;
   user_type: typeof UserType[number];
 }
+
+export interface IUserCreation extends IUser {
+  password: string;
+  passwordConfirmation: string;
+  emailConfirmation: string;
+}

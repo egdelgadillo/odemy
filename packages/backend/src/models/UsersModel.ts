@@ -5,8 +5,11 @@ import {
   PrimaryKey,
   DataType,
   Default,
+  ForeignKey,
+  HasOne,
 } from 'sequelize-typescript';
 import { IUser, UserType } from '@odemy/shared';
+import { UsersAuthModel } from './UsersAuthModel';
 
 @Table({
   tableName: 'Users',

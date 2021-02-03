@@ -5,14 +5,14 @@ export class ErrorController extends Error {
   public message: string;
   public statusCode: number;
 
-  constructor(error: IError) {
+  constructor(error: IError, originalMessage?: string) {
     super();
 
     this.statusCode = error.statusCode;
     this.code = error.code;
     this.message = error.message;
 
-    console.log(`An error has ocurred: ${error.message}`);
+    console.log(`An error has ocurred: ${originalMessage || error.message}`);
   }
 
   static NotFound() {
@@ -31,26 +31,32 @@ export class ErrorController extends Error {
     });
   }
 
-  static DatabaseError() {
-    return new ErrorController({
-      statusCode: 400,
-      code: 'DatabaseError',
-      message: 'Database Error',
-    });
+  static DatabaseError(err: Error) {
+    return new ErrorController(
+      {
+        statusCode: 400,
+        code: 'DatabaseError',
+        message: 'Database Error',
+      },
+      err.message
+    );
   }
 
-  static UnknownError() {
-    return new ErrorController({
-      statusCode: 400,
-      code: 'UnknownError',
-      message: 'Unknown Error',
-    });
+  static UnknownError(err: Error) {
+    return new ErrorController(
+      {
+        statusCode: 400,
+        code: 'UnknownError',
+        message: 'Unknown Error',
+      },
+      err.message
+    );
   }
 
   static HandleError(err: Error) {
     if ('statusCode' in err && 'code' in err && 'message' in err) {
       return err;
     }
-    return ErrorController.UnknownError();
+    return ErrorController.UnknownError(err);
   }
 }

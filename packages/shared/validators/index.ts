@@ -1,1 +1,2 @@
-export * from './UserModelValidator';
+export * from './UserValidator';
+export * from './UserAuthValidator';
