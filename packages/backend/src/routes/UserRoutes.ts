@@ -1,8 +1,8 @@
-import { ApiResponse, IUser } from '@odemy/shared';
 import { Router, Request, NextFunction, Response } from 'express';
+import { ApiResponse, IUser } from '@odemy/shared';
 
+import { UserController } from '../controllers/entities/UserController';
 import { ErrorController } from '../controllers/ErrorController';
-import { UserController } from '../controllers/UserController';
 
 export const UserRoutes = Router();
 

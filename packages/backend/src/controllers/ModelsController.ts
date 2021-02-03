@@ -1,5 +1,6 @@
 import { ConvertToModel } from '@odemy/shared';
 import { IGetAllModels } from '@odemy/shared';
+
 import { DatabaseController } from './DatabaseController';
 
 export abstract class ModelsController<T> {

@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
+
 import { ErrorController } from './ErrorController';
 
 export class DatabaseController {

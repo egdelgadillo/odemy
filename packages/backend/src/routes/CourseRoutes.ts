@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { CourseController } from '../controllers/CourseController';
+
+import { CourseController } from '../controllers/entities/CourseController';
 
 export const CourseRoutes = Router();
 

@@ -1,8 +1,8 @@
 import { IUser } from '../entities/IUser';
-import { ConvertToOptions } from '../../../../object-validator';
+import { ConvertToOptions, ValidateObject } from '../../../../object-validator';
 import { UserType } from '../types/UserType';
 
-export const UserModelValidator: ConvertToOptions<IUser> = {
+export const userValidatorModel: ConvertToOptions<IUser> = {
   id: {
     allowed: false,
   },
@@ -23,4 +23,8 @@ export const UserModelValidator: ConvertToOptions<IUser> = {
     allowedValues: UserType.concat(),
     type: 'string',
   },
+};
+
+export const validateUser = (user: IUser): IUser | null => {
+  return ValidateObject(user, userValidatorModel, { throwOnError: false });
 };

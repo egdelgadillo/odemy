@@ -1,6 +1,6 @@
 import { ICourse } from '@odemy/shared';
-import { CoursesModel } from '../models/CoursesModel';
-import { ModelsController } from './ModelsController';
+import { CoursesModel } from '../../models/CoursesModel';
+import { ModelsController } from '../ModelsController';
 
 export class CourseController extends ModelsController<ICourse> {
   static instance: CourseController;
