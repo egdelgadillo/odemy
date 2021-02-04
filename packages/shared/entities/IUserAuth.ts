@@ -1,5 +1,5 @@
 export interface IUserAuth {
-  id: string;
+  id?: string;
   user_id: string;
   hash: string;
   emailValidationToken: string;

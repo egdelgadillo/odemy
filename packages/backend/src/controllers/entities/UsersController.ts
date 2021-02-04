@@ -3,11 +3,12 @@ import { IUser, IUserCreation, validateUser } from '@odemy/shared';
 import { ModelsController } from '../ModelsController';
 import { UsersModel } from '../../models/UsersModel';
 import { ErrorController } from '../ErrorController';
+import { UsersAuthController } from './UsersAuthController';
 
-export class UsersController extends ModelsController<IUser> {
+export class UsersController extends ModelsController {
   static instance: UsersController;
 
-  constructor() {
+  constructor(private transaction?: any) {
     super();
     console.log('Initializing UserController...');
   }
@@ -17,8 +18,11 @@ export class UsersController extends ModelsController<IUser> {
     if (!newUser) {
       throw ErrorController.BadRequest();
     }
-    const result = await UsersModel.create(newUser);
-    return result;
+    const userResult = await UsersModel.create(newUser, {
+      transaction: this.transaction,
+    });
+
+    return userResult;
   }
 
   async getAll() {
@@ -41,7 +45,9 @@ export class UsersController extends ModelsController<IUser> {
   }
 
   async delete(id: string) {
-    const foundUser = await UsersModel.findByPk(id);
+    const foundUser = await UsersModel.findByPk(id, {
+      transaction: this.transaction,
+    });
     if (!foundUser) {
       throw ErrorController.NotFound();
     }

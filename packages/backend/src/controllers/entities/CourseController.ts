@@ -2,7 +2,7 @@ import { ICourse } from '@odemy/shared';
 import { CoursesModel } from '../../models/CoursesModel';
 import { ModelsController } from '../ModelsController';
 
-export class CourseController extends ModelsController<ICourse> {
+export class CourseController extends ModelsController {
   static instance: CourseController;
 
   constructor() {

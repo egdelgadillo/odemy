@@ -4,20 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:start:local": "export NODE_ENV=local && nodemon src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
+    "dev:start:local": "export NODE_ENV=local && nodemon src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:migrate:local": "export NODE_ENV=local && sequelize-cli db:migrate",
     "db:undo:local": "export NODE_ENV=local && sequelize-cli db:migrate:undo:all"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "sequelize-typescript": "^2.0.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.17.11",
     "@types/node": "^14.14.22",
     "nodemon": "^2.0.7",

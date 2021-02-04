@@ -1,4 +1,4 @@
-import { IUser, IUserCreation } from '../entities/IUser';
+import { IUserCreation } from '../entities/IUser';
 import {
   ConvertToOptions,
   ValidateObject,
@@ -35,19 +35,44 @@ const userValidatorModel: ConvertToOptions<IUserCreation> = {
     type: 'string',
     allowNull: false,
     required: true,
+    depends: [
+      {
+        passwordConfirmation: {
+          state: 'present',
+          validate: 'ifValue',
+          propertyToTest: 'password',
+        },
+      },
+    ],
   },
   passwordConfirmation: {
     type: 'string',
     allowNull: false,
     required: true,
+    depends: ['password'],
   },
   emailConfirmation: {
     type: 'string',
     allowNull: false,
     required: true,
+    depends: [
+      {
+        email: {
+          state: 'present',
+          validate: 'ifValue',
+          propertyToTest: 'emailConfirmation',
+        },
+      },
+    ],
   },
 };
 
-export const validateUser = (user: IUser): IUser | null => {
-  return ValidateObject(user, userValidatorModel, { throwOnError: false });
+export const validateUser = <T>(user: T): T | null => {
+  const resultValue = ValidateObject(user, userValidatorModel, {
+    throwOnError: false,
+  });
+
+  if (!resultValue) return null;
+
+  return resultValue;
 };

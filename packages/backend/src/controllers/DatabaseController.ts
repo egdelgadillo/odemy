@@ -51,6 +51,10 @@ export class DatabaseController {
     }
   }
 
+  async getTransaction() {
+    return await this.db.transaction();
+  }
+
   /**
    * Singleton methods
    */

@@ -9,24 +9,24 @@ export const UsersRoutes = Router();
 /**
  * Create User
  */
-UsersRoutes.post(
-  '',
-  async (
-    req: Request,
-    res: Response<ApiResponse<IUser>>,
-    next: NextFunction
-  ) => {
-    try {
-      const body = req.body;
-      const userController = UsersController.getInstance();
-      const result = await userController.create(body);
+// UsersRoutes.post(
+//   '',
+//   async (
+//     req: Request,
+//     res: Response<ApiResponse<IUser>>,
+//     next: NextFunction
+//   ) => {
+//     try {
+//       const body = req.body;
+//       const userController = UsersController.getInstance();
+//       const result = await userController.create(body);
 
-      res.status(200).send({ status: 'OK', data: result });
-    } catch (err) {
-      next(ErrorController.HandleError(err));
-    }
-  }
-);
+//       res.status(200).send({ status: 'OK', data: result });
+//     } catch (err) {
+//       next(ErrorController.HandleError(err));
+//     }
+//   }
+// );
 
 /**
  * Get all Users

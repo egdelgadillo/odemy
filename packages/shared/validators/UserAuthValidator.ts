@@ -4,6 +4,9 @@ import {
   ValidateObject,
 } from '../../../../object-validator/dist';
 
+/**
+ * TODO: Delete if not in use
+ */
 const userAuthValidatorModel: ConvertToOptions<IUserAuth> = {
   id: {
     allowed: false,
